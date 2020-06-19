@@ -11,13 +11,11 @@ export ZSH="/home/jake/.oh-my-zsh"
 ZSH_THEME="spaceship"
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
-  dir           # Current directory section
   host          # Hostname section
+  dir           # Current directory section
   git           # Git section (git_branch + git_status)
-  package       # Package version
   docker        # Docker section
   venv          # virtualenv section
-  conda         # conda virtualenv section
   pyenv         # Pyenv section
   line_sep      # Line break
   jobs          # Background jobs indicator
@@ -26,13 +24,17 @@ SPACESHIP_PROMPT_ORDER=(
 )
 #SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_DIR_TRUNC_PREFIX="…/"
+SPACESHIP_DIR_TRUNC_PREFIX=".../"
 SPACESHIP_DIR_COLOR="blue"
 #SPACESHIP_GIT_PREFIX=""
 SPACESHIP_GIT_STATUS_PREFIX=" ("
 SPACESHIP_GIT_STATUS_SUFFIX=")"
+SPACESHIP_EXEC_TIME_SHOW=false
 SPACESHIP_JOBS_SYMBOL="\u2692"
 
+SPACESHIP_USER_SUFFIX=""
+SPACESHIP_HOST_PREFIX="@"
+SPACESHIP_DIR_PREFIX=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -123,6 +125,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 ###. /home/jake/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
+#if [ -f `which powerline-daemon` ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  source /home/jake/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+#fi
+
 # Extra Stuff
 
 # set vim as the default editor
@@ -147,3 +156,5 @@ catquick () {
     catkin build
     source ~/catkin_ws/devel/setup.zsh
 }
+
+
