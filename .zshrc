@@ -152,9 +152,14 @@ alias lsblk='lsblk -e 7'
 # force tmux to assume 256 color support
 #alias tmux='tmux -2'
 
+export JETBOT_WORKSPACE=/home/jake/catkin_ws
+source $JETBOT_WORKSPACE/devel/setup.zsh
+
 catquick () {
     catkin build
-    source ~/catkin_ws/devel/setup.zsh
+    source $JETBOT_WORKSPACE/devel/setup.zsh
 }
 
+# add aliases for roscd e.g. "roscd home" goes to the base catkin workspace
+export ROS_LOCATIONS="home=$JETBOT_WORKSPACE:src=$JETBOT_WORKSPACE/src"
 
