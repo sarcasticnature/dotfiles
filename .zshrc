@@ -141,9 +141,9 @@ export EDITOR=/usr/bin/vim
 alias df='df -h'
 
 # set up ROS (melodic, in this case)
-#source /opt/ros/melodic/setup.zsh
-#export ROS_MASTER_URI="http://192.168.50.2:11311"
-#export ROS_IP="192.168.50.50"
+source /opt/ros/melodic/setup.zsh
+export ROS_MASTER_URI="http://192.168.50.2:11311"
+export ROS_IP="192.168.50.2"
 
 # ignore snaps when using df or lsblk
 alias df='df -h -x"squashfs"'
