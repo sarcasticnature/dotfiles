@@ -143,11 +143,11 @@ catquick () {
     source ~/catkin_ws/devel/setup.bash
 }
 
-#source ~/Git/Seawolf-8-Software/devel/setup.bash
+source ~/Git/Seawolf-8-Software/devel/setup.bash
 
-#source /home/jake/Git/ardupilot/Tools/completion/completion.bash
-#source /usr/share/gazebo/setup.sh
+source /home/jake/Git/ardupilot/Tools/completion/completion.bash
+source /usr/share/gazebo/setup.sh
 
-#export GAZEBO_MODEL_PATH="~/Git/ardupilot_gazebo/models"
-#export GAZEBO_RESOURCE_PATH="~/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}"
+export GAZEBO_MODEL_PATH="~/Git/ardupilot_gazebo/models"
+export GAZEBO_RESOURCE_PATH="~/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}"
 
