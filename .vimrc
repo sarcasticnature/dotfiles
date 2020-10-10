@@ -139,9 +139,9 @@ let &t_EI = "\<Esc>[2 q"    "EI = NORMAL mode (else)
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-set rtp+=/home/jake/.local/lib/python3.6/site-packages/powerline/powerline/bindings/vim
-set laststatus=2
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
+"set rtp+=/home/jake/.local/lib/python3.6/site-packages/powerline/powerline/bindings/vim
+"set laststatus=2
 
