@@ -1,5 +1,8 @@
 set nocompatible
-syntax on
+
+call plug#begin('~/.vim/plugged')
+Plug 'dense-analysis/ale'
+call plug#end()
 
 
 """""""""""""""""""" Settings from example vimrc's """"""""""""""""""""
@@ -90,6 +93,8 @@ set showmatch
 
 """""""""""""""""""" Jake Custom """"""""""""""""""""
 
+set number relativenumber
+
 " width of a hard tab is displayed as equivalent to 4
 set tabstop=4
 " indents have a width of 4
@@ -120,9 +125,6 @@ set scrolloff=3
 
 " Prevent the default ftplugin settings from loading
 "autocmd BufReadPre,BufNewFile * let b:did_ftplugin = 1
-
-" Enable filetype plugin
-"filetype indent plugin on
 
 " Change cursor shape in different modes
 " Cursor settings:
