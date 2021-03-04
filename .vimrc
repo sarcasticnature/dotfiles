@@ -1,5 +1,8 @@
 set nocompatible
-syntax on
+
+call plug#begin('~/.vim/plugged')
+Plug 'dense-analysis/ale'
+call plug#end()
 
 
 """""""""""""""""""" Settings from example vimrc's """"""""""""""""""""
@@ -90,6 +93,8 @@ set showmatch
 
 """""""""""""""""""" Jake Custom """"""""""""""""""""
 
+set number relativenumber
+
 " width of a hard tab is displayed as equivalent to 4
 set tabstop=4
 " indents have a width of 4
@@ -121,9 +126,6 @@ set scrolloff=3
 " Prevent the default ftplugin settings from loading
 "autocmd BufReadPre,BufNewFile * let b:did_ftplugin = 1
 
-" Enable filetype plugin
-"filetype indent plugin on
-
 " Change cursor shape in different modes
 " Cursor settings:
 "  1 -> blinking block
@@ -138,4 +140,13 @@ let &t_EI = "\<Esc>[2 q"    "EI = NORMAL mode (else)
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
+"set rtp+=/home/jake/.local/lib/python3.6/site-packages/powerline/powerline/bindings/vim
+"set laststatus=2
 

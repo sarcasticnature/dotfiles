@@ -14,10 +14,9 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
-  package       # Package version
-  docker        # Docker section
+#  package       # Package version
   venv          # virtualenv section
-  conda         # conda virtualenv section
+#  conda         # conda virtualenv section
   pyenv         # Pyenv section
   line_sep      # Line break
   jobs          # Background jobs indicator
@@ -32,6 +31,7 @@ SPACESHIP_DIR_COLOR="blue"
 SPACESHIP_GIT_STATUS_PREFIX=" ("
 SPACESHIP_GIT_STATUS_SUFFIX=")"
 SPACESHIP_JOBS_SYMBOL="\u2692"
+SPACESHIP_JOBS_AMOUNT_PREFIX=" "
 
 
 # Set list of themes to pick from when loading at random
@@ -92,7 +92,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(git tmux docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,22 +128,33 @@ source $ZSH/oh-my-zsh.sh
 # set vim as the default editor
 export EDITOR=/usr/bin/vim
 
-# alias df to use human readable format by default
-alias df='df -h'
-
-# set up ROS (melodic, in this case)
-#source /opt/ros/melodic/setup.zsh
-#export ROS_MASTER_URI="http://192.168.50.2:11311"
-#export ROS_IP="192.168.50.50"
-
 # ignore snaps when using df or lsblk
 alias df='df -h -x"squashfs"'
 alias lsblk='lsblk -e 7'
 
-# force tmux to assume 256 color support
-#alias tmux='tmux -2'
+# prevent having to hit enter twice when using !! or !$
+unsetopt histverify
+setopt nosharehistory
 
-catquick () {
-    catkin build
-    source ~/catkin_ws/devel/setup.zsh
-}
+# set up ROS (foxy, in this case)
+source /opt/ros/foxy/setup.zsh
+
+export USER_COLCON_DIRS=/home/jake/Git/homework-1
+USER_COLCON_DIRS+=":/home/jake/Git/jetbot-test"
+USER_COLCON_DIRS+=":/home/jake/jetbot_ws"
+USER_COLCON_DIRS+=":/home/jake/test_ws"
+
+alias colquick='source /home/jake/.local/bin/colquick'
+
+#source ~/Git/Seawolf-8-Software/devel/setup.zsh
+#
+#source /home/jake/Git/ardupilot/Tools/completion/completion.zsh
+#source /usr/share/gazebo/setup.sh
+#
+#export GAZEBO_MODEL_PATH=~/Git/ardupilot_gazebo/models
+#export GAZEBO_RESOURCE_PATH=~/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}
+
+
+
+source "$HOME/.cargo/env"
+
