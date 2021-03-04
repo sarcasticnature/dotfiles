@@ -1,0 +1,3 @@
+pane	Workspace	0	:zsh	1	:*	0	:/home/jake	1	zsh	:
+window	Workspace	0	1	:*	b89d,94x44,0,0,0
+state	Workspace	
