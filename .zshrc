@@ -154,7 +154,3 @@ alias colquick='source /home/jake/.local/bin/colquick'
 #export GAZEBO_MODEL_PATH=~/Git/ardupilot_gazebo/models
 #export GAZEBO_RESOURCE_PATH=~/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}
 
-
-
-source "$HOME/.cargo/env"
-
