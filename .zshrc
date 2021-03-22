@@ -139,10 +139,8 @@ setopt nosharehistory
 # set up ROS (foxy, in this case)
 source /opt/ros/foxy/setup.zsh
 
-export USER_COLCON_DIRS=/home/jake/Git/homework-1
-USER_COLCON_DIRS+=":/home/jake/Git/jetbot-test"
-USER_COLCON_DIRS+=":/home/jake/jetbot_ws"
-USER_COLCON_DIRS+=":/home/jake/test_ws"
+export USER_COLCON_DIRS="/home/jake/test_ws"
+#USER_COLCON_DIRS+=":/home/jake/test_ws"
 
 alias colquick='source /home/jake/.local/bin/colquick'
 
@@ -156,5 +154,5 @@ alias colquick='source /home/jake/.local/bin/colquick'
 
 
 
-source "$HOME/.cargo/env"
+#source "$HOME/.cargo/env"
 
