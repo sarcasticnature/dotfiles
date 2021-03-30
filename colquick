@@ -10,7 +10,8 @@ else
         if [[ $PWD/ = $workspace_dir/* ]]; then
             temp_pwd=$OLDPWD
             cd $workspace_dir
-            colcon build --symlink-install
+            colcon build --symlink-install --continue-on-error \
+                --event-handlers desktop_notification-
             source ./install/setup.zsh
             
             unsetopt sh_word_split
