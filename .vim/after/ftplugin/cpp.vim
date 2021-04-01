@@ -2,6 +2,13 @@ setlocal shiftwidth=2
 setlocal softtabstop=2
 setlocal expandtab
 
-"let b:ale_linters = ['cpplint', 'cppcheck', 'clangtidy']
-"let b:ale_linters_explicit = 1
+" don't indent in namespace
+" align new line after open parentheses
+setlocal cino=N-s,(0,Ws
+
+" prevent autocommenting on new line
+setlocal formatoptions-=cro
+
+let b:ale_linters = ['cpplint', 'cppcheck', 'clangtidy']
+let b:ale_linters_explicit = 1
 
