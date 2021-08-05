@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/jake/Git/sarcasticnature.github.io/_posts'
+let g:netrw_dirhist_7='/home/jake/Git/heron/heron_control/config'
+let g:netrw_dirhist_6='/home/jake/Git/bt_learning'
+let g:netrw_dirhist_5='/home/jake/.ros/log/2021-06-10-14-24-52-241946-EscapePod-185990'
+let g:netrw_dirhist_4='/etc/apt/sources.list.d'
+let g:netrw_dirhist_3='/home/jake/Git/bt_learning/.idea'
+let g:netrw_dirhist_2='/home/jake/Git/bt_learning/include'
 let g:netrw_dirhist_1='/home/jake/Git/dotfiles/.tmux'

@@ -4,7 +4,7 @@ setlocal expandtab
 
 " don't indent in namespace
 " align new line after open parentheses
-setlocal cino=N-s,(0,Ws
+setlocal cino=N-s,(0,Ws,g0
 
 " prevent autocommenting on new line
 setlocal formatoptions-=cro
