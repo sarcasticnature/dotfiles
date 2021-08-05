@@ -121,7 +121,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-###. /home/jake/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Extra Stuff
 
@@ -136,21 +135,22 @@ alias lsblk='lsblk -e 7'
 unsetopt histverify
 setopt nosharehistory
 
-# set up ROS (foxy, in this case)
-source /opt/ros/foxy/setup.zsh
+# alias "open"
+alias open=xdg-open
 
-export USER_COLCON_DIRS=/home/jake/Git/homework-1
-USER_COLCON_DIRS+=":/home/jake/Git/jetbot-test"
-USER_COLCON_DIRS+=":/home/jake/jetbot_ws"
+# set up ROS (only uncomment one version)
+#source /opt/ros/foxy/setup.zsh
+source /opt/ros/noetic/setup.zsh
+#source ~/test_ws/install/setup.zsh
+# disable colcon desktop notifications (they pile up very quickly)
+COLCON_EXTENSION_BLOCKLIST='colcon_core.event_handler.desktop_notification'
+
+export USER_COLCON_DIRS=/home/jake/Git/action_learning_ws
 USER_COLCON_DIRS+=":/home/jake/test_ws"
 
 alias colquick='source /home/jake/.local/bin/colquick'
 
-#source ~/Git/Seawolf-8-Software/devel/setup.zsh
-#
-#source /home/jake/Git/ardupilot/Tools/completion/completion.zsh
-#source /usr/share/gazebo/setup.sh
-#
-#export GAZEBO_MODEL_PATH=~/Git/ardupilot_gazebo/models
-#export GAZEBO_RESOURCE_PATH=~/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}
+alias huskyrossetup="export ROS_MASTER_URI=http://192.168.131.1:11311 \
+    && export ROS_IP=192.168.131.14 \
+    && source /opt/ros/noetic/setup.zsh"
 
