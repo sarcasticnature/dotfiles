@@ -126,10 +126,11 @@ export EDITOR=/usr/bin/vim
 # alias df to use human readable format by default
 alias df='df -h'
 
-# set up ROS (melodic, in this case)
-source /opt/ros/melodic/setup.bash
+# set up ROS 
+#source /opt/ros/foxy/setup.bash
+source /opt/ros/noetic/setup.bash
 #export ROS_MASTER_URI="http://192.168.50.2:11311"
-#export ROS_IP="192.168.50.50"
+#export ROS_IP="192.168.50.14"
 
 # ignore snaps when using df or lsblk
 alias df='df -h -x"squashfs"'
@@ -142,12 +143,4 @@ catquick () {
     catkin build
     source ~/catkin_ws/devel/setup.bash
 }
-
-source ~/Git/Seawolf-8-Software/devel/setup.bash
-
-source /home/jake/Git/ardupilot/Tools/completion/completion.bash
-source /usr/share/gazebo/setup.sh
-
-export GAZEBO_MODEL_PATH="~/Git/ardupilot_gazebo/models"
-export GAZEBO_RESOURCE_PATH="~/ardupilot_gazebo/worlds:${GAZEBO_RESOURCE_PATH}"
 
