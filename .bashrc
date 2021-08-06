@@ -126,10 +126,11 @@ export EDITOR=/usr/bin/vim
 # alias df to use human readable format by default
 alias df='df -h'
 
-# set up ROS (melodic, in this case)
-#source /opt/ros/melodic/setup.bash
+# set up ROS 
+#source /opt/ros/foxy/setup.bash
+source /opt/ros/noetic/setup.bash
 #export ROS_MASTER_URI="http://192.168.50.2:11311"
-#export ROS_IP="192.168.50.50"
+#export ROS_IP="192.168.50.14"
 
 # ignore snaps when using df or lsblk
 alias df='df -h -x"squashfs"'
@@ -142,5 +143,4 @@ catquick () {
     catkin build
     source ~/catkin_ws/devel/setup.bash
 }
-
 

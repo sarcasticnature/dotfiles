@@ -135,11 +135,22 @@ alias lsblk='lsblk -e 7'
 unsetopt histverify
 setopt nosharehistory
 
-# set up ROS
-#source /opt/ros/<ros distro>/setup.zsh
+# alias "open"
+alias open=xdg-open
 
-export USER_COLCON_DIRS=''
-#USER_COLCON_DIRS+=":/home/jake/my_colcon_dir"
+# set up ROS (only uncomment one version)
+#source /opt/ros/foxy/setup.zsh
+source /opt/ros/noetic/setup.zsh
+#source ~/test_ws/install/setup.zsh
+# disable colcon desktop notifications (they pile up very quickly)
+COLCON_EXTENSION_BLOCKLIST='colcon_core.event_handler.desktop_notification'
+
+export USER_COLCON_DIRS=/home/jake/Git/action_learning_ws
+USER_COLCON_DIRS+=":/home/jake/test_ws"
 
 alias colquick='source /home/jake/.local/bin/colquick'
+
+alias huskyrossetup="export ROS_MASTER_URI=http://192.168.131.1:11311 \
+    && export ROS_IP=192.168.131.14 \
+    && source /opt/ros/noetic/setup.zsh"
 
