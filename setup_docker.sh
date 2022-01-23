@@ -8,7 +8,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 mkdir -p ~/.config
-cp starship.toml ~/.config
+cp docker_starship.toml ~/.config/starship.toml
 
 #ZSH_CUSTOM=~/.oh-my-zsh
 #git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
