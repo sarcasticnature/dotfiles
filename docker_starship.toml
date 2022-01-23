@@ -1,4 +1,4 @@
-format = "Docker: $all"
+format = "[ ](yellow) $all"
 #add_newline = false
 
 [character]                            # The name of the module we are configuring is "character"
