@@ -4,7 +4,7 @@ set -e
 # install zsh
 apt update && apt install -y vim tmux zsh git curl fonts-powerline
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattanded
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 mkdir -p ~/.config
