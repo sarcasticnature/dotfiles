@@ -15,4 +15,8 @@ disabled = true
 style = "bold blue"
 truncation_length = 8
 truncation_symbol = "…/"
+read_only = " "
+
+[python]
+symbol = " "
 
