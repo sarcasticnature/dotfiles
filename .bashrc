@@ -128,7 +128,7 @@ alias df='df -h'
 
 # set up ROS 
 #source /opt/ros/foxy/setup.bash
-source /opt/ros/noetic/setup.bash
+#source /opt/ros/noetic/setup.bash
 #export ROS_MASTER_URI="http://192.168.50.2:11311"
 #export ROS_IP="192.168.50.14"
 
@@ -139,8 +139,15 @@ alias lsblk='lsblk -e 7'
 # force tmux to assume 256 color support
 #alias tmux='tmux -2'
 
-catquick () {
-    catkin build
-    source ~/catkin_ws/devel/setup.bash
-}
+#catquick () {
+#    catkin build
+#    source ~/catkin_ws/devel/setup.bash
+#}
 
+alias bat='batcat'
+
+export PATH="${PATH}:/home/jkeller/.cargo/bin/"
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. "$HOME/.cargo/env"
