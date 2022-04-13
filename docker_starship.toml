@@ -1,0 +1,22 @@
+format = "[ ](yellow) $all"
+#add_newline = false
+
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](bold red) "
+
+[cmake]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[directory]
+style = "bold blue"
+truncation_length = 8
+truncation_symbol = "…/"
+read_only = " "
+
+[python]
+symbol = " "
+

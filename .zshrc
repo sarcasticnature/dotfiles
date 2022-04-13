@@ -8,30 +8,32 @@ export ZSH="/root/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-#  package       # Package version
-  venv          # virtualenv section
-#  conda         # conda virtualenv section
-  pyenv         # Pyenv section
-  line_sep      # Line break
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-#SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_DIR_TRUNC_PREFIX="…/"
-SPACESHIP_DIR_COLOR="blue"
-#SPACESHIP_GIT_PREFIX=""
-SPACESHIP_GIT_STATUS_PREFIX=" ("
-SPACESHIP_GIT_STATUS_SUFFIX=")"
-SPACESHIP_JOBS_SYMBOL="\u2692"
-SPACESHIP_JOBS_AMOUNT_PREFIX=" "
+
+eval "$(starship init zsh)"
+####ZSH_THEME="spaceship"
+####SPACESHIP_PROMPT_ORDER=(
+####  user          # Username section
+####  dir           # Current directory section
+####  host          # Hostname section
+####  git           # Git section (git_branch + git_status)
+#####  package       # Package version
+####  venv          # virtualenv section
+#####  conda         # conda virtualenv section
+####  pyenv         # Pyenv section
+####  line_sep      # Line break
+####  jobs          # Background jobs indicator
+####  exit_code     # Exit code section
+####  char          # Prompt character
+####)
+#####SPACESHIP_PROMPT_ADD_NEWLINE=false
+####SPACESHIP_PROMPT_SEPARATE_LINE=false
+####SPACESHIP_DIR_TRUNC_PREFIX="…/"
+####SPACESHIP_DIR_COLOR="blue"
+#####SPACESHIP_GIT_PREFIX=""
+####SPACESHIP_GIT_STATUS_PREFIX=" ("
+####SPACESHIP_GIT_STATUS_SUFFIX=")"
+####SPACESHIP_JOBS_SYMBOL="\u2692"
+####SPACESHIP_JOBS_AMOUNT_PREFIX=" "
 
 
 # Set list of themes to pick from when loading at random
