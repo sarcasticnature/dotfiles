@@ -1,8 +1,8 @@
 set nocompatible
 
-call plug#begin('~/.vim/plugged')
-Plug 'dense-analysis/ale'
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"Plug 'dense-analysis/ale'
+"call plug#end()
 
 
 """""""""""""""""""" Settings from example vimrc's """"""""""""""""""""
@@ -93,7 +93,7 @@ set showmatch
 
 """""""""""""""""""" Jake Custom """"""""""""""""""""
 
-set number relativenumber
+"set number relativenumber
 
 " width of a hard tab is displayed as equivalent to 4
 set tabstop=4
@@ -142,11 +142,8 @@ let &t_EI = "\<Esc>[2 q"    "EI = NORMAL mode (else)
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
+let g:ale_sign_warning = '-'
 
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
-"set rtp+=/home/jake/.local/lib/python3.6/site-packages/powerline/powerline/bindings/vim
-"set laststatus=2
+packloadall
+helptags ALL
 

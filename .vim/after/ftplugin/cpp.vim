@@ -1,5 +1,5 @@
-setlocal shiftwidth=2
-setlocal softtabstop=2
+setlocal shiftwidth=4
+setlocal softtabstop=4
 setlocal expandtab
 
 " don't indent in namespace
@@ -9,6 +9,8 @@ setlocal cino=N-s,(0,Ws,g0
 " prevent autocommenting on new line
 setlocal formatoptions-=cro
 
-let b:ale_linters = ['cpplint', 'cppcheck', 'clangtidy']
+let b:ale_linters = ['clangtidy']
 let b:ale_linters_explicit = 1
+
+let g:ale_fixers = ['clang-format']
 
