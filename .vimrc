@@ -152,3 +152,15 @@ let g:ale_lint_on_save = 0
 packloadall
 helptags ALL
 
+function! ALELinterProblem()
+    let l:history = ale#history#Get(bufnr(''))
+    let l:last = l:history[-1]
+        if has_key(l:last, 'exit_code') && l:last.status == 'finished' && l:last.exit_code == 1
+            echohl Statement | echo 'Linting failed with output: ' . string(l:last.output)
+        endif
+endfunction
+
+augroup ALELinterIssues
+    autocmd User ALELintPost unsilent call ALELinterProblem()
+augroup END
+
