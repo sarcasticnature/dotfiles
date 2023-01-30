@@ -155,9 +155,9 @@ helptags ALL
 function! ALELinterProblem()
     let l:history = ale#history#Get(bufnr(''))
     let l:last = l:history[-1]
-        if has_key(l:last, 'exit_code') && l:last.status == 'finished' && l:last.exit_code == 1
-            echohl Statement | echo 'Linting failed with output: ' . string(l:last.output)
-        endif
+    if has_key(l:last, 'exit_code') && l:last.status == 'finished' && l:last.exit_code == 1 && len(l:last.output) == 0
+         echohl Statement | echo 'Linting failed with no output' | echohl None
+    endif
 endfunction
 
 augroup ALELinterIssues
