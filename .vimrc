@@ -144,6 +144,7 @@ nnoremap <silent> <C-s> :ALELint<CR>
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '-'
+highlight ALEErrorSign ctermfg=Red ctermbg=None guifg=Red guibg=None
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
