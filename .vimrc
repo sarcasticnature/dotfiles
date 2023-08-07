@@ -105,7 +105,7 @@ set softtabstop=4
 set expandtab
 
 " create a line at the 80th column 
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=0
 
 "let base16colorspace=256    " Access colors present in 256 colorspace
