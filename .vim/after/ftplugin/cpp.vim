@@ -12,7 +12,7 @@ setlocal formatoptions-=cro
 let b:ale_linters = ['clangtidy']
 let b:ale_linters_explicit = 1
 
-let b:ale_c_build_dir = '/root/ros/overlay_ws/build/compile_commands.json'
+let b:ale_c_build_dir = '/root/volume/code/dev_ws/build/compile_commands.json'
 
 let g:ale_fixers = ['clang-format']
 

@@ -144,7 +144,7 @@ nnoremap <silent> <C-s> :ALELint<CR>
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '-'
-highlight ALEErrorSign ctermfg=Red ctermbg=None guifg=Red guibg=None
+highlight ALEErrorSign ctermfg=Red ctermbg=None guifg=Red guibg=Black
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
@@ -165,3 +165,4 @@ augroup ALELinterIssues
     autocmd User ALELintPost unsilent call ALELinterProblem()
 augroup END
 
+set incsearch
