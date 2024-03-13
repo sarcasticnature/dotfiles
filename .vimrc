@@ -140,7 +140,14 @@ let &t_EI = "\<Esc>[2 q"    "EI = NORMAL mode (else)
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-s> :ALELint<CR>
 
-"let g:ale_sign_error = '●'
-"let g:ale_sign_warning = '.'
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '-'
 
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_save = 0
+
+packloadall
+helptags ALL

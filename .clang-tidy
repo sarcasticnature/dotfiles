@@ -1,0 +1,9 @@
+---
+Checks: >
+    *,
+    -modernize-use-trailing-return-type,
+    -readability-avoid-const-params-in-decls,
+    -google-readability-todo,
+    -llvm-header-guard,
+FormatStyle: 'file'
+
