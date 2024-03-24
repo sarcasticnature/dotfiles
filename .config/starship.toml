@@ -16,6 +16,7 @@ symbol = "  "
 
 [buf]
 symbol = " "
+format = "[$symbol]($style)"
 
 [c]
 symbol = " "
@@ -28,21 +29,25 @@ symbol = " "
 
 [dart]
 symbol = " "
+format = "[$symbol]($style)"
 
 [docker_context]
 symbol = " "
 
 [elixir]
 symbol = " "
+format = "[$symbol]($style)"
 
 [elm]
 symbol = " "
+format = "[$symbol]($style)"
 
 [git_branch]
 symbol = " "
 
 [golang]
 symbol = " "
+format = "[$symbol]($style)"
 
 [guix_shell]
 symbol = " "
@@ -52,33 +57,40 @@ symbol = " "
 
 [haxe]
 symbol = "⌘ "
+format = "[$symbol]($style)"
 
 [hg_branch]
 symbol = " "
 
 [java]
 symbol = " "
+format = "[$symbol]($style)"
 
 [julia]
 symbol = " "
+format = "[$symbol]($style)"
 
 [lua]
 symbol = " "
+format = "[$symbol]($style)"
 
 [memory_usage]
 symbol = " "
 
 [meson]
 symbol = "喝 "
+format = "[$symbol]($style)"
 
 [nim]
 symbol = " "
+format = "[$symbol]($style)"
 
 [nix_shell]
 symbol = " "
 
 [nodejs]
 symbol = " "
+format = "[$symbol]($style)"
 
 [os.symbols]
 Alpine = " "
@@ -121,17 +133,26 @@ Windows = " "
 [package]
 symbol = " "
 
+[perl]
+format = "[$symbol]($style)"
+
+[php]
+format = "[$symbol]($style)"
+
 [python]
 symbol = " "
+format = "[$symbol]($style)"
 
 [rlang]
 symbol = "ﳒ "
 
 [ruby]
 symbol = " "
+format = "[$symbol]($style)"
 
 [rust]
 symbol = " "
+format = "[$symbol]($style)"
 
 [scala]
 symbol = " "
