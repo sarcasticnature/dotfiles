@@ -11,6 +11,9 @@ truncation_length = 8
 truncation_symbol = "…/"
 read_only = " "
 
+[container]
+format = '[\[$name\]]($style) '
+
 [aws]
 symbol = "  "
 
