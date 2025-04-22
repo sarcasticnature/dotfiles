@@ -122,32 +122,8 @@ fi
 
 # set vim as the default editor
 export EDITOR=/usr/bin/vim
-
-# alias df to use human readable format by default
-alias df='df -h'
-
-# set up ROS 
-#source /opt/ros/foxy/setup.bash
-#source /opt/ros/noetic/setup.bash
-#export ROS_MASTER_URI="http://192.168.50.2:11311"
-#export ROS_IP="192.168.50.14"
-
-# ignore snaps when using df or lsblk
-alias df='df -h -x"squashfs"'
-alias lsblk='lsblk -e 7'
-
-# force tmux to assume 256 color support
-#alias tmux='tmux -2'
-
-#catquick () {
-#    catkin build
-#    source ~/catkin_ws/devel/setup.bash
-#}
-
-alias bat='batcat'
-
-export PATH="${PATH}:/home/jkeller/.cargo/bin/"
-
+export PATH=/home/jake/.local/bin:$PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-. "$HOME/.cargo/env"
+
+eval "$(starship init bash)"
