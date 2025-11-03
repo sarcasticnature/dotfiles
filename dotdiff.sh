@@ -12,9 +12,6 @@ echo -e "${RED}Note: ${NC}only differing files will be listed\n"
 echo -e "${YELLOW}Bash:${NC}"
 diff -q --color=always $PWD/.bashrc $HOME
 
-echo -e "${YELLOW}Zsh:${NC}"
-diff -q $PWD/.zshrc $HOME
-
 echo -e "${YELLOW}Tmux:${NC}"
 diff -q $PWD/.tmux.conf $HOME
 #diff -qr --exclude='*.txt' --exclude='.git' $PWD/.tmux $HOME/.tmux
@@ -23,7 +20,3 @@ diff -qr --exclude={'*.txt','.git',"last"} $PWD/.tmux $HOME/.tmux
 echo -e "${YELLOW}Vim:${NC}"
 diff -q $PWD/.vimrc $HOME
 diff -qr --exclude='.git' $PWD/.vim $HOME/.vim 
-
-echo -e "${YELLOW}colquick:${NC}"
-diff -q $PWD/colquick $HOME/.local/bin/
-
