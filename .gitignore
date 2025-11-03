@@ -1,2 +1,3 @@
 .vim/plugged/
 .vim/.netrwhist
+lazy-lock.json
