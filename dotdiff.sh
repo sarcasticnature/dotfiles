@@ -20,3 +20,6 @@ diff -qr --exclude={'*.txt','.git',"last"} $PWD/.tmux $HOME/.tmux
 echo -e "${YELLOW}Vim:${NC}"
 diff -q $PWD/.vimrc $HOME
 diff -qr --exclude='.git' $PWD/.vim $HOME/.vim 
+
+echo -e "${YELLOW}Neovim:${NC}"
+diff -qr --exclude='.git' $PWD/.config/nvim $HOME/.config/nvim 
