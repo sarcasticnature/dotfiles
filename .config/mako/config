@@ -1,0 +1,8 @@
+background-color=#00000099
+text-color=#ffffffff
+border-color=#000000ff
+border-radius=3
+default-timeout=4000
+
+[mode=do-not-disturb]
+invisible=1
