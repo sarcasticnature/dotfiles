@@ -71,7 +71,11 @@ return {
 
                 -- Jump to the implementation of the word under your cursor.
                 --  Useful when your language has ways of declaring types without an actual implementation.
-                map("gri", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+                map(
+                    "gri",
+                    require("telescope.builtin").lsp_implementations,
+                    "[G]oto [I]mplementation"
+                )
 
                 -- Jump to the definition of the word under your cursor.
                 --  This is where a variable was first declared, or where a function is defined, etc.
@@ -84,16 +88,28 @@ return {
 
                 -- Fuzzy find all the symbols in your current document.
                 --  Symbols are things like variables, functions, types, etc.
-                map("gO", require("telescope.builtin").lsp_document_symbols, "Open Document Symbols")
+                map(
+                    "gO",
+                    require("telescope.builtin").lsp_document_symbols,
+                    "Open Document Symbols"
+                )
 
                 -- Fuzzy find all the symbols in your current workspace.
                 --  Similar to document symbols, except searches over your entire project.
-                map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Open Workspace Symbols")
+                map(
+                    "gW",
+                    require("telescope.builtin").lsp_dynamic_workspace_symbols,
+                    "Open Workspace Symbols"
+                )
 
                 -- Jump to the type of the word under your cursor.
                 --  Useful when you're not sure what type a variable is and you want to see
                 --  the definition of its *type*, not where it was *defined*.
-                map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
+                map(
+                    "grt",
+                    require("telescope.builtin").lsp_type_definitions,
+                    "[G]oto [T]ype Definition"
+                )
 
                 -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
                 ---@param client vim.lsp.Client
@@ -114,10 +130,16 @@ return {
                 -- This may be unwanted, since they displace some of your code
                 if
                     client
-                    and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf)
+                    and client_supports_method(
+                        client,
+                        vim.lsp.protocol.Methods.textDocument_inlayHint,
+                        event.buf
+                    )
                 then
                     map("<leader>th", function()
-                        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+                        vim.lsp.inlay_hint.enable(
+                            not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf })
+                        )
                     end, "[T]oggle Inlay [H]ints")
                 end
             end,
@@ -168,7 +190,19 @@ return {
         --  - settings (table): Override the default settings passed when initializing the server.
         --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         local servers = {
-            -- clangd = {},
+            clangd = {
+                cmd = {
+                    "clangd",
+                    "--query-driver=/usr/bin/gcc,/usr/bin/g++",
+                    --"--compile-commands-dir=/home/jake/workspaces/template/build",
+                },
+                --capabilities = {
+                --    arguments = {
+                --        "--query-driver=/usr/bin/gcc,/usr/bin/g++",
+                --        "--compile-commands-dir=/home/jake/workspaces/template/build",
+                --    },
+                --},
+            },
             -- gopls = {},
             -- pyright = {},
             -- rust_analyzer = {},
@@ -197,6 +231,11 @@ return {
             },
         }
 
+        for server, config in pairs(servers) do
+            vim.lsp.config[server] = config
+            vim.lsp.enable(server)
+        end
+
         -- Ensure the servers and tools above are installed
         --
         -- To check the current status of installed tools and/or manually install
@@ -213,25 +252,27 @@ return {
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             "stylua", -- Used to format Lua code
-            "hls",
+            --"hls",
             "hlint",
             "ormolu",
+            --"clangd",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
         require("mason-lspconfig").setup({
             ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
             automatic_installation = false,
-            handlers = {
-                function(server_name)
-                    local server = servers[server_name] or {}
-                    -- This handles overriding only values explicitly passed
-                    -- by the server configuration above. Useful when disabling
-                    -- certain features of an LSP (for example, turning off formatting for ts_ls)
-                    server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                    require("lspconfig")[server_name].setup(server)
-                end,
-            },
+            --handlers = {
+            --    function(server_name)
+            --        local server = servers[server_name] or {}
+            --        -- This handles overriding only values explicitly passed
+            --        -- by the server configuration above. Useful when disabling
+            --        -- certain features of an LSP (for example, turning off formatting for ts_ls)
+            --        server.capabilities =
+            --            vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+            --        require("lspconfig")[server_name].setup(server)
+            --    end,
+            --},
         })
     end,
 }
