@@ -118,6 +118,7 @@ return { -- You can easily change to a different colorscheme.
     {
         "f4z3r/gruvbox-material.nvim",
         priority = 1000, -- make sure to load this before all the other start plugins
+        lazy = false,
         config = function()
             local contrast = "hard"
             local colors = require("gruvbox-material.colors").get(vim.o.background, contrast)
